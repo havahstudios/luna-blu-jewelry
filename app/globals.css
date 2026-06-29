@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #F4F1EA;
+    color: #23272E;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Cormorant Garamond', 'Hoefler Text', Georgia, serif; }
+  .font-sans    { font-family: 'Assistant', 'Mulish', system-ui, sans-serif; }
+
+  /* Slow, deliberate zoom — luxury feel */
+  .lb-img-zoom { overflow: hidden; }
+  .lb-img-zoom img { transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .lb-img-zoom:hover img { transform: scale(1.06); }
+
+  .lb-tile-zoom { overflow: hidden; }
+  .lb-tile-zoom img { transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .lb-tile-zoom:hover img { transform: scale(1.05); }
+
+  .lb-navlink {
+    position: relative;
+    transition: color 0.3s;
+    color: #3D3629;
+  }
+  .lb-navlink:hover { color: #9A7840; }
+
+  .lb-foot-link {
+    transition: color 0.3s;
+  }
+  .lb-foot-link:hover { color: #9A7840; }
+
+  .lb-screen {
+    animation: lb-fade 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+}
+
+@keyframes lb-fade {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes lb-toast {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.lb-toast-anim {
+  animation: lb-toast 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
