@@ -32,28 +32,28 @@ export default function Home() {
           <Image src={HERO_IMG} alt="Luna Blu" fill priority quality={90}
             className="object-cover object-[center_25%]"
             sizes="100vw" />
-          {/* warm cream fade at bottom — light, not black */}
+          {/* dark scrim bottom-left for text legibility */}
           <div className="absolute inset-0"
             style={{
-              background: 'linear-gradient(to bottom, rgba(253,252,250,0) 30%, rgba(253,252,250,0.15) 60%, rgba(253,252,250,0.70) 100%)'
+              background: 'linear-gradient(to top right, rgba(20,16,12,0.52) 0%, rgba(20,16,12,0.18) 55%, rgba(20,16,12,0) 100%)'
             }} />
 
           <div className="absolute bottom-0 left-0 right-0 z-[3]
             max-w-container mx-auto px-12 pb-[220px]
             flex items-end justify-between gap-10">
             <div>
-              <p className={`${EYEBROW} mb-4`} style={{ color: '#6B5F50' }}>
+              <p className={`${EYEBROW} mb-4`} style={{ color: 'rgba(253,248,240,0.78)' }}>
                 Handmade in Los Angeles
               </p>
               <h1 className="font-display font-light m-0 max-w-[680px]"
-                style={{ fontSize: 'clamp(60px, 7vw, 96px)', lineHeight: 0.92, color: '#1C1814' }}>
+                style={{ fontSize: 'clamp(60px, 7vw, 96px)', lineHeight: 0.92, color: '#FDFCFA' }}>
                 Customize<br />your collection
               </h1>
             </div>
             <div className="flex-none pb-2">
               <Link href="/shop"
                 className={`${DISCOVER}`}
-                style={{ color: '#6B5F50', borderColor: 'rgba(107,95,80,0.35)' }}>
+                style={{ color: 'rgba(253,248,240,0.72)', borderColor: 'rgba(253,248,240,0.28)' }}>
                 Discover the collection
               </Link>
             </div>
