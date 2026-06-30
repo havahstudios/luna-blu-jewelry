@@ -64,18 +64,19 @@ export default function ProductPage() {
           {/* Product grid */}
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
             {/* Image */}
-            <div className="relative aspect-square overflow-hidden rounded-sm bg-[#e7ded2]">
+            <div className="rounded-sm overflow-hidden bg-[#e7ded2]">
               {product.img ? (
                 <Image
                   src={product.img}
                   alt={product.name}
-                  fill
-                  priority
-                  className="object-contain"
+                  width={0}
+                  height={0}
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               ) : (
-                <div className="absolute inset-0 flex items-center justify-center bg-sand-300">
+                <div className="flex items-center justify-center h-64 bg-sand-300">
                   <span className="text-ink-400 font-sans">No image</span>
                 </div>
               )}
