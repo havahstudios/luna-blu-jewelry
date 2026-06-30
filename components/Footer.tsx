@@ -135,7 +135,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="havah-credit"
             >
-              <span>Built by</span><strong className="havah-credit__name">Havah&nbsp;Studios</strong>
+              <span>Built by</span> <strong className="havah-credit__name">Havah Studios</strong>
             </a>
           </div>
         </div>

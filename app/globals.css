@@ -73,25 +73,27 @@
 .havah-credit {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  color: #6B6358;
+  gap: 7px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #7A7068;
   text-decoration: none;
-  border: 1px solid #C8BFB4;
+  border: 1.5px solid #C0B8B0;
   border-radius: 999px;
-  padding: 5px 14px;
-  transition: border-color 0.25s, color 0.25s;
+  padding: 7px 20px;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
 }
-.havah-credit:hover { border-color: #9A7840; color: #3D3629; }
+.havah-credit:hover { border-color: #9A7840; }
 .havah-credit span { font-weight: 400; }
 .havah-credit__name {
   font-weight: 700;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   display: inline-block;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
 }
 .havah-credit:hover .havah-credit__name {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   color: #9A7840;
 }
