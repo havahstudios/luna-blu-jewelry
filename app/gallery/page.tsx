@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Toast from '@/components/Toast';
 
-const PHOTOS = Array.from({ length: 20 }, (_, i) => `/gallery/gallery-${String(i + 1).padStart(2, '0')}.jpg`);
+const PHOTOS = Array.from({ length: 26 }, (_, i) => `/gallery/gallery-${String(i + 1).padStart(2, '0')}.jpg`);
 
 export default function GalleryPage() {
   return (
