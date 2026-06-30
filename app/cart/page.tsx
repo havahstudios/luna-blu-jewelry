@@ -29,8 +29,8 @@ export default function CartPage() {
       <Toast />
 
       <main className="flex-1">
-        <div className="lb-screen max-w-[840px] mx-auto px-12 py-16 pb-24">
-          <h1 className="font-display font-medium text-[52px] text-ink-900 m-0 mb-10">Your bag</h1>
+        <div className="lb-screen max-w-[840px] mx-auto px-4 sm:px-6 md:px-12 py-10 md:py-16 pb-20 md:pb-24">
+          <h1 className="font-display font-medium text-[36px] md:text-[52px] text-ink-900 m-0 mb-8 md:mb-10">Your bag</h1>
 
           {count === 0 ? (
             <div className="text-center py-16 px-6 border border-sand-300 rounded-lg">

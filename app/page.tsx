@@ -39,18 +39,18 @@ export default function Home() {
             }} />
 
           <div className="absolute bottom-0 left-0 right-0 z-[3]
-            max-w-container mx-auto px-12 pb-[220px]
-            flex items-end justify-between gap-10">
+            max-w-container mx-auto px-4 sm:px-8 md:px-12 pb-[80px] sm:pb-[140px] md:pb-[220px]
+            flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 sm:gap-10">
             <div>
-              <p className={`${EYEBROW} mb-4`} style={{ color: 'rgba(253,248,240,0.78)' }}>
+              <p className={`${EYEBROW} mb-3 md:mb-4`} style={{ color: 'rgba(253,248,240,0.78)' }}>
                 Handmade in Los Angeles
               </p>
               <h1 className="font-display font-light m-0 max-w-[680px]"
-                style={{ fontSize: 'clamp(60px, 7vw, 96px)', lineHeight: 0.92, color: '#FDFCFA' }}>
+                style={{ fontSize: 'clamp(44px, 7vw, 96px)', lineHeight: 0.92, color: '#FDFCFA' }}>
                 Customize<br />your collection
               </h1>
             </div>
-            <div className="flex-none pb-2">
+            <div className="flex-none sm:pb-2">
               <Link href="/shop"
                 className={`${DISCOVER}`}
                 style={{ color: 'rgba(253,248,240,0.72)', borderColor: 'rgba(253,248,240,0.28)' }}>
@@ -62,11 +62,11 @@ export default function Home() {
 
 
         {/* ── 2. SIGNATURE PIECES — 3-column editorial grid ── */}
-        <section className="py-[140px] px-[6vw]" style={{ background: '#FAF8F4' }}>
+        <section className="py-[72px] md:py-[140px] px-4 sm:px-[6vw]" style={{ background: '#FAF8F4' }}>
           <p className="text-[16px] font-semibold tracking-[0.28em] uppercase text-center mb-[72px]" style={{ color: '#B89350' }}>
             Signature Pieces
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-[4vw] gap-y-16 max-w-[1160px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-[4vw] gap-y-10 md:gap-y-16 max-w-[1160px] mx-auto">
 
             {/* 1 — Isla */}
             <div className="flex flex-col">
@@ -137,11 +137,11 @@ export default function Home() {
               style={{ maxHeight: '85vh', objectFit: 'cover', objectPosition: 'top center' }} />
           </div>
           {/* text panel */}
-          <div className="flex items-center px-[8vw] py-[80px]" style={{ background: '#FFFFFF' }}>
+          <div className="flex items-center px-6 py-12 sm:px-[8vw] sm:py-[80px]" style={{ background: '#FFFFFF' }}>
             <div className="max-w-[360px]">
               <p className={`${EYEBROW} mb-6`} style={{ color: '#B89350' }}>Collection</p>
               <h2 className="font-display font-light m-0 mb-5 leading-[1.04]"
-                style={{ fontSize: 52, color: '#1C1814' }}>
+                style={{ fontSize: 'clamp(34px, 4vw, 52px)', color: '#1C1814' }}>
                 Best Sellers
               </h2>
               <p className="font-light leading-[1.9] mb-9"
@@ -161,12 +161,12 @@ export default function Home() {
         {/* ── 4. ONE-OF-ONE — text left, image right ── */}
         <section className="grid md:grid-cols-2 items-stretch">
           {/* text panel */}
-          <div className="flex items-center px-[8vw] py-[80px] order-2 md:order-1"
+          <div className="flex items-center px-6 py-12 sm:px-[8vw] sm:py-[80px] order-2 md:order-1"
             style={{ background: '#F7F4EE' }}>
             <div className="max-w-[360px]">
               <p className={`${EYEBROW} mb-6`} style={{ color: '#B89350' }}>Rare &amp; handpicked</p>
               <h2 className="font-display font-light m-0 mb-5 leading-[1.04]"
-                style={{ fontSize: 52, color: '#1C1814' }}>
+                style={{ fontSize: 'clamp(34px, 4vw, 52px)', color: '#1C1814' }}>
                 One-of-One
               </h2>
               <p className="font-light leading-[1.9] mb-9"
@@ -201,12 +201,12 @@ export default function Home() {
               style={{ maxHeight: '85vh', objectFit: 'cover', objectPosition: '60% 20%' }} />
           </div>
           {/* text */}
-          <div className="flex items-center px-[8vw] py-[80px]"
+          <div className="flex items-center px-6 py-12 sm:px-[8vw] sm:py-[80px]"
             style={{ background: '#F7F4EE' }}>
             <div className="max-w-[360px]">
               <p className={`${EYEBROW} mb-6`} style={{ color: '#B89350' }}>Season</p>
               <h2 className="font-display font-light m-0 mb-5 leading-[1.04]"
-                style={{ fontSize: 52, color: '#1C1814' }}>
+                style={{ fontSize: 'clamp(34px, 4vw, 52px)', color: '#1C1814' }}>
                 Spring /<br />Summer
               </h2>
               <p className="font-light leading-[1.9] mb-9"
@@ -258,12 +258,12 @@ export default function Home() {
         {/* ── 7. SPRING/SUMMER image+text split ── */}
         <section className="grid md:grid-cols-2 items-stretch">
           {/* text */}
-          <div className="flex items-center px-[8vw] py-[80px] order-2 md:order-1"
+          <div className="flex items-center px-6 py-12 sm:px-[8vw] sm:py-[80px] order-2 md:order-1"
             style={{ background: '#FFFFFF' }}>
             <div className="max-w-[360px]">
               <p className={`${EYEBROW} mb-6`} style={{ color: '#B89350' }}>Our atelier</p>
               <h2 className="font-display font-light m-0 mb-5 leading-[1.04]"
-                style={{ fontSize: 52, color: '#1C1814' }}>
+                style={{ fontSize: 'clamp(34px, 4vw, 52px)', color: '#1C1814' }}>
                 Every piece,<br />by hand
               </h2>
               <p className="font-light leading-[1.9] mb-4"

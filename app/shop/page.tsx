@@ -30,11 +30,11 @@ function ShopContent() {
   }, [cat, q]);
 
   return (
-    <div className="lb-screen max-w-wide mx-auto px-12 py-14 pb-24">
+    <div className="lb-screen max-w-wide mx-auto px-4 sm:px-6 md:px-12 py-10 md:py-14 pb-24">
       {/* Heading */}
       <div className="text-center mb-9">
         <p className="text-[13px] font-semibold tracking-[0.24em] uppercase text-ink-500 mb-[10px]">The collection</p>
-        <h1 className="font-display font-medium text-[52px] text-ink-900 m-0">{cat}</h1>
+        <h1 className="font-display font-medium text-[36px] md:text-[52px] text-ink-900 m-0">{cat}</h1>
       </div>
 
       {/* Category chips */}

@@ -61,7 +61,7 @@ export default function ProductPage() {
       <Toast />
 
       <main className="flex-1">
-        <div className="lb-screen max-w-container mx-auto px-12 pt-10 pb-24">
+        <div className="lb-screen max-w-container mx-auto px-4 sm:px-6 md:px-12 pt-8 md:pt-10 pb-20 md:pb-24">
           {/* Back button */}
           <Link
             href="/shop"
@@ -71,7 +71,7 @@ export default function ProductPage() {
           </Link>
 
           {/* Product grid */}
-          <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
             {/* Image */}
             <div className="relative aspect-square overflow-hidden rounded-sm bg-[#e7ded2]">
               {product.img ? (
@@ -95,7 +95,7 @@ export default function ProductPage() {
               <div className="text-[11px] font-semibold tracking-[0.20em] uppercase text-ink-400 mb-[14px]">
                 {collection}
               </div>
-              <h1 className="font-display font-medium text-[46px] leading-[1.08] text-ink-900 m-0 mb-4">
+              <h1 className="font-display font-medium text-[32px] md:text-[46px] leading-[1.08] text-ink-900 m-0 mb-4">
                 {product.name}
               </h1>
               <div className="text-[22px] text-ink-900 font-sans mb-7">{price}</div>

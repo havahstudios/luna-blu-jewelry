@@ -37,9 +37,9 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 z-40 bg-ivory-100/96 backdrop-blur-md border-b border-sand-200">
-        <div className="max-w-[1320px] mx-auto px-12 py-[26px] grid grid-cols-3 items-center gap-6">
-          {/* Left nav */}
-          <nav className="flex gap-8 items-center">
+        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 md:px-12 py-[20px] md:py-[26px] grid grid-cols-3 items-center gap-4 md:gap-6">
+          {/* Left nav — hidden on mobile, hamburger handles it */}
+          <nav className="hidden md:flex gap-8 items-center">
             <button
               onClick={() => setMenuOpen(o => !o)}
               className={`${NAV_LINK} flex items-center gap-[4px] border-none bg-transparent p-0`}
@@ -53,7 +53,7 @@ export default function Header() {
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
-            className="font-display font-medium text-[26px] tracking-[0.22em] text-ink-900 no-underline text-center leading-none pl-[0.22em] whitespace-nowrap"
+            className="font-display font-medium text-[22px] md:text-[26px] tracking-[0.22em] text-ink-900 no-underline text-center leading-none pl-[0.22em] whitespace-nowrap"
           >
             LUNA&nbsp;BLU
           </Link>
@@ -99,7 +99,7 @@ export default function Header() {
         {/* Shop dropdown */}
         {menuOpen && (
           <div className="absolute top-full left-0 right-0 border-b border-sand-200 shadow-[0_8px_32px_rgba(60,48,30,0.14)] z-50" style={{ background: '#EDE8E0' }}>
-            <div className="max-w-[1320px] mx-auto px-12 py-9 grid grid-cols-5 gap-[16px_28px]">
+            <div className="max-w-[1320px] mx-auto px-4 sm:px-6 md:px-12 py-7 md:py-9 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-[14px_20px] md:gap-[16px_28px]">
               {menuCats.map(cat => (
                 <button
                   key={cat}

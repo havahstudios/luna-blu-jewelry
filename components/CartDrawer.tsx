@@ -45,7 +45,7 @@ export default function CartDrawer() {
       {/* Drawer */}
       <div
         ref={drawerRef}
-        className="fixed top-0 right-0 h-full z-[60] flex flex-col w-full max-w-[420px] transition-transform duration-300 ease-in-out"
+        className="fixed top-0 right-0 h-full z-[60] flex flex-col w-full sm:max-w-[420px] transition-transform duration-300 ease-in-out"
         style={{
           background: '#FAF8F4',
           transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
@@ -53,7 +53,7 @@ export default function CartDrawer() {
         }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-7 py-6 border-b border-[#EDE8E0]">
+        <div className="flex items-center justify-between px-5 sm:px-7 py-5 sm:py-6 border-b border-[#EDE8E0]">
           <div className="flex items-center gap-3">
             <ShoppingBag size={18} className="text-[#1C1814]" />
             <span className="font-display text-[20px] font-light tracking-[0.04em] text-[#1C1814]">
@@ -69,7 +69,7 @@ export default function CartDrawer() {
         </div>
 
         {/* Items */}
-        <div className="flex-1 overflow-y-auto px-7 py-6">
+        <div className="flex-1 overflow-y-auto px-5 sm:px-7 py-5 sm:py-6">
           {items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full gap-4 text-center">
               <ShoppingBag size={36} className="text-[#C8B8A4]" />
@@ -121,7 +121,7 @@ export default function CartDrawer() {
 
         {/* Footer */}
         {items.length > 0 && (
-          <div className="px-7 py-6 border-t border-[#EDE8E0]">
+          <div className="px-5 sm:px-7 py-5 sm:py-6 border-t border-[#EDE8E0]">
             <div className="flex justify-between items-center mb-5">
               <span className="text-[12px] font-semibold tracking-[0.18em] uppercase text-[#8C7E6C]">Total</span>
               <span className="font-display text-[22px] font-light text-[#1C1814]">${total.toFixed(2)}</span>
