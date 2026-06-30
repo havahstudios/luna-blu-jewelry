@@ -37,7 +37,8 @@ export default function ProductPage() {
   const collection = product.cats[0] ?? 'Luna Blu';
   const price = formatPrice(product.price);
 
-  const descText = product.desc ?? 'Handmade with love in Los Angeles, CA. Hypoallergenic, waterproof, and tarnish-free.';
+  const descRaw = product.desc ?? 'Handmade with love in Los Angeles, CA.\nHypoallergenic, waterproof, and tarnish-free.';
+  const bullets = descRaw.split('\n').map(s => s.trim()).filter(Boolean);
 
   // Related products: same category, exclude current
   const related = CATALOG
@@ -93,7 +94,14 @@ export default function ProductPage() {
               <div className="h-px bg-sand-300 mb-[26px]" />
 
               {/* Description */}
-              <p className="text-[15px] text-ink-500 leading-[1.75] mb-8 m-0">{descText}</p>
+              <ul className="list-none p-0 m-0 mb-8 flex flex-col gap-[11px]">
+                {bullets.map((b, i) => (
+                  <li key={i} className="flex gap-3 text-[15px] text-ink-500 leading-[1.55]">
+                    <span className="text-gold-500 flex-none">—</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
 
               {/* Add to bag */}
               <button
@@ -111,7 +119,7 @@ export default function ProductPage() {
 
               {/* Tags */}
               <div className="flex gap-[10px] flex-wrap mb-7">
-                {['Handmade', 'Hypoallergenic', 'Ships from LA'].map(tag => (
+                {['Handmade', 'Hypoallergenic'].map(tag => (
                   <span
                     key={tag}
                     className="px-3 h-7 rounded-sm bg-sand-300 text-ink-700 text-[11px] font-semibold tracking-[0.10em] uppercase inline-flex items-center"
