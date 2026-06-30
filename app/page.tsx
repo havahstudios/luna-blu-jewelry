@@ -42,20 +42,10 @@ export default function Home() {
             max-w-container mx-auto px-4 sm:px-8 md:px-12 pb-[80px] sm:pb-[140px] md:pb-[220px]
             flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 sm:gap-10">
             <div>
-              <p className={`${EYEBROW} mb-3 md:mb-4`} style={{ color: 'rgba(253,248,240,0.78)' }}>
-                Handmade in Los Angeles
-              </p>
-              <h1 className="font-display font-light m-0 max-w-[680px]"
+              <h1 className="font-sans font-light m-0 max-w-[680px]"
                 style={{ fontSize: 'clamp(44px, 7vw, 96px)', lineHeight: 0.92, color: '#FDFCFA' }}>
                 Customize<br />your collection
               </h1>
-            </div>
-            <div className="flex-none sm:pb-2">
-              <Link href="/shop"
-                className={`${DISCOVER}`}
-                style={{ color: 'rgba(253,248,240,0.72)', borderColor: 'rgba(253,248,240,0.28)' }}>
-                Discover the collection
-              </Link>
             </div>
           </div>
         </section>
@@ -82,7 +72,7 @@ export default function Home() {
               <p className="font-light mb-5" style={{ fontSize: 13, color: '#A89478' }}>$215</p>
               <Link href="/product/isla-necklace" className={`${DISCOVER}`}
                 style={{ color: '#1C1814', borderColor: 'rgba(28,24,20,0.22)' }}>
-                Discover
+                Shop now
               </Link>
             </div>
 
@@ -100,7 +90,7 @@ export default function Home() {
               <p className="font-light mb-5" style={{ fontSize: 13, color: '#A89478' }}>$180</p>
               <Link href="/product/collared-metal-choker-gold-filled" className={`${DISCOVER}`}
                 style={{ color: '#1C1814', borderColor: 'rgba(28,24,20,0.22)' }}>
-                Discover
+                Shop now
               </Link>
             </div>
 
@@ -118,7 +108,7 @@ export default function Home() {
               <p className="font-light mb-5" style={{ fontSize: 13, color: '#A89478' }}>$220</p>
               <Link href="/product/lora-necklace" className={`${DISCOVER}`}
                 style={{ color: '#1C1814', borderColor: 'rgba(28,24,20,0.22)' }}>
-                Discover
+                Shop now
               </Link>
             </div>
 
@@ -151,7 +141,7 @@ export default function Home() {
               <Link href="/shop?cat=Best+Sellers"
                 className={`${DISCOVER}`}
                 style={{ color: '#1C1814', borderColor: 'rgba(28,24,20,0.25)' }}>
-                Discover
+                Shop now
               </Link>
             </div>
           </div>
@@ -176,7 +166,7 @@ export default function Home() {
               <Link href="/shop?cat=One-of-One"
                 className={`${DISCOVER}`}
                 style={{ color: '#1C1814', borderColor: 'rgba(28,24,20,0.25)' }}>
-                Discover
+                Shop now
               </Link>
             </div>
           </div>
@@ -216,7 +206,7 @@ export default function Home() {
               <Link href="/shop?cat=Spring%2FSummer"
                 className={`${DISCOVER}`}
                 style={{ color: '#1C1814', borderColor: 'rgba(28,24,20,0.25)' }}>
-                Discover the collection
+                Shop now
               </Link>
             </div>
           </div>
@@ -248,7 +238,7 @@ export default function Home() {
               <Link href="/shop?cat=Statement"
                 className={`${DISCOVER}`}
                 style={{ color: 'rgba(253,248,240,0.75)', borderColor: 'rgba(253,248,240,0.25)' }}>
-                Discover
+                Shop now
               </Link>
             </div>
           </div>

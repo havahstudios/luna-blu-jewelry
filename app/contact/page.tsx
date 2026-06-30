@@ -25,7 +25,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-ivory-100">
+    <div className="flex flex-col min-h-screen font-sans bg-white">
       <Announcement />
       <Header />
       <Toast />
@@ -34,7 +34,6 @@ export default function ContactPage() {
         <div className="lb-screen max-w-[640px] mx-auto px-12 py-16 pb-24">
           {/* Heading */}
           <div className="text-center mb-11">
-            <p className="text-[12px] font-semibold tracking-eyebrow uppercase text-ink-500 mb-3">We&apos;re here to help</p>
             <h1 className="font-display font-medium text-[54px] text-ink-900 m-0 mb-[14px]">Contact</h1>
             <p className="text-[15px] text-ink-500 leading-[1.6]">
               Complete the form below or email us at{' '}

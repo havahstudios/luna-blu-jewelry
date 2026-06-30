@@ -104,7 +104,7 @@ export default function Header() {
                 <button
                   key={cat}
                   onClick={() => handleCatClick(cat)}
-                  className="font-display italic text-[21px] font-medium text-ink-900 hover:text-gold-600 transition-colors duration-300 cursor-pointer text-left border-none bg-transparent p-0"
+                  className="font-sans text-[16px] font-semibold tracking-[0.10em] uppercase text-ink-900 hover:text-gold-600 transition-colors duration-300 cursor-pointer text-left border-none bg-transparent p-0"
                 >
                   {cat}
                 </button>
@@ -146,7 +146,7 @@ export default function Header() {
               <button
                 key={cat}
                 onClick={() => handleCatClick(cat)}
-                className="text-left py-[14px] border-b border-sand-200 font-display italic text-[24px] text-ink-900 hover:text-gold-600 transition-colors bg-transparent border-x-0 border-t-0"
+                className="text-left py-[14px] border-b border-sand-200 font-sans text-[18px] font-semibold tracking-[0.10em] uppercase text-ink-900 hover:text-gold-600 transition-colors bg-transparent border-x-0 border-t-0"
               >
                 {cat}
               </button>

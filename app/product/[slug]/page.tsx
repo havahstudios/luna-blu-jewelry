@@ -119,7 +119,7 @@ export default function ProductPage() {
               <div className="text-[11px] font-semibold tracking-[0.20em] uppercase text-ink-400 mb-[14px]">
                 {collection}
               </div>
-              <h1 className="font-display font-medium text-[32px] md:text-[46px] leading-[1.08] text-ink-900 m-0 mb-4">
+              <h1 className="font-sans font-medium text-[32px] md:text-[46px] leading-[1.08] text-ink-900 m-0 mb-4">
                 {product.name}
               </h1>
               <div className="text-[22px] text-ink-900 font-sans mb-7">{price}</div>
@@ -127,9 +127,9 @@ export default function ProductPage() {
               <div className="h-px bg-sand-300 mb-[26px]" />
 
               {/* Description */}
-              <ul className="list-none p-0 m-0 mb-8 flex flex-col gap-[11px]">
+              <ul className="list-none p-0 m-0 mb-8 flex flex-col gap-[5px]">
                 {bullets.map((b, i) => (
-                  <li key={i} className="flex gap-3 text-[15px] text-ink-500 leading-[1.55]">
+                  <li key={i} className="flex gap-3 text-[14px] text-ink-500 leading-[1.5]">
                     <span className="text-gold-500 flex-none">—</span>
                     <span>{b}</span>
                   </li>
@@ -150,17 +150,23 @@ export default function ProductPage() {
                 {product.soldout ? 'Sold Out' : `Add to bag — ${price}`}
               </button>
 
-              {/* Tags */}
-              <div className="flex gap-[10px] flex-wrap mb-7">
-                {['Handmade', 'Hypoallergenic'].map(tag => (
-                  <span
-                    key={tag}
-                    className="px-3 h-7 rounded-sm bg-sand-300 text-ink-700 text-[11px] font-semibold tracking-[0.10em] uppercase inline-flex items-center"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              {/* Tags — only shown when accurate per product description */}
+              {(() => {
+                const d = (product.desc ?? '').toLowerCase();
+                const tags = [
+                  ...(d.includes('handmade') ? ['Handmade'] : []),
+                  ...(d.includes('hypoallergenic') ? ['Hypoallergenic'] : []),
+                ];
+                return tags.length > 0 ? (
+                  <div className="flex gap-[10px] flex-wrap mb-7">
+                    {tags.map(tag => (
+                      <span key={tag} className="px-3 h-7 rounded-sm bg-sand-300 text-ink-700 text-[11px] font-semibold tracking-[0.10em] uppercase inline-flex items-center">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                ) : null;
+              })()}
 
               <p className="text-[13px] text-ink-400 leading-[1.7] m-0">
                 For custom orders, additional sizing, or sourcing requests email{' '}
