@@ -69,3 +69,17 @@
 .lb-toast-anim {
   animation: lb-toast 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
+
+.havah-credit {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: inherit;
+  opacity: 0.6;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.havah-credit:hover { opacity: 1; }
+.havah-credit span { font-weight: 400; }
+.havah-credit__name { font-weight: 700; letter-spacing: 0.02em; }
