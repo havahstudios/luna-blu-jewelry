@@ -27,15 +27,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CartDrawer />
           {children}
         </CartProvider>
-        <a
-          href="https://havahstudios.live/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="havah-credit"
-          style={{ position: 'fixed', bottom: 16, right: 20, zIndex: 999 }}
-        >
-          <span>Built by</span><strong className="havah-credit__name">Havah Studios</strong>
-        </a>
       </body>
     </html>
   );

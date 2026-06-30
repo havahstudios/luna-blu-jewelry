@@ -126,9 +126,17 @@ export default function Footer() {
 
         <div className="border-t border-sand-300 mt-14 py-6 pb-8 flex flex-wrap justify-between items-center gap-3">
           <span className="text-[12px] text-ink-400 tracking-[0.06em]">© Luna Blu 2026 — Los Angeles, CA</span>
-          <div className="flex gap-7">
+          <div className="flex items-center gap-6">
             <a href="#" className="text-[12px] text-ink-500 no-underline hover:text-gold-700 transition-colors">Privacy Policy</a>
             <a href="#" className="text-[12px] text-ink-500 no-underline hover:text-gold-700 transition-colors">Terms of Use</a>
+            <a
+              href="https://havahstudios.live/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="havah-credit"
+            >
+              <span>Built by</span><strong className="havah-credit__name">Havah&nbsp;Studios</strong>
+            </a>
           </div>
         </div>
       </div>

@@ -1,13 +1,10 @@
-'use client';
-
-import Script from 'next/script';
+import Image from 'next/image';
 import Announcement from '@/components/Announcement';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Toast from '@/components/Toast';
 
-// Paste your Behold.so Feed ID here once you have it
-const BEHOLD_FEED_ID = '';
+const PHOTOS = Array.from({ length: 20 }, (_, i) => `/gallery/gallery-${String(i + 1).padStart(2, '0')}.jpg`);
 
 export default function GalleryPage() {
   return (
@@ -31,30 +28,27 @@ export default function GalleryPage() {
             </a>
           </div>
 
-          {BEHOLD_FEED_ID ? (
-            <>
-              <div id={`behold-widget-${BEHOLD_FEED_ID}`} />
-              <Script
-                src="https://w.behold.so/widget.js"
-                type="module"
-                strategy="afterInteractive"
-              />
-            </>
-          ) : (
-            <div className="text-center py-24 border border-dashed border-sand-400 rounded-lg">
-              <p className="text-[14px] text-ink-400">
-                Instagram feed coming soon —{' '}
-                <a
-                  href="https://instagram.com/lunablujewelry"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-taupe-600 hover:text-gold-700 transition-colors"
-                >
-                  follow @lunablujewelry
-                </a>
-              </p>
-            </div>
-          )}
+          {/* Masonry grid */}
+          <div className="columns-2 sm:columns-3 gap-x-[14px] [&>*]:break-inside-avoid [&>*]:mb-[14px]">
+            {PHOTOS.map((src, i) => (
+              <a
+                key={src}
+                href="https://instagram.com/lunablujewelry"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block overflow-hidden rounded-sm group"
+              >
+                <Image
+                  src={src}
+                  alt={`Luna Blu — photo ${i + 1}`}
+                  width={800}
+                  height={1000}
+                  sizes="(max-width: 640px) 50vw, 33vw"
+                  className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </main>
 
