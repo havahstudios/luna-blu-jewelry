@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -17,6 +18,7 @@ export default function ProductPage() {
   const slug = typeof params.slug === 'string' ? params.slug : '';
   const product = getProductBySlug(slug);
   const { addItem } = useCart();
+  const [activeIdx, setActiveIdx] = useState(0);
 
   if (!product) {
     return (
@@ -39,6 +41,11 @@ export default function ProductPage() {
 
   const descRaw = product.desc ?? 'Handmade with love in Los Angeles, CA.\nHypoallergenic, waterproof, and tarnish-free.';
   const bullets = descRaw.split('\n').map(s => s.trim()).filter(Boolean);
+
+  const images = product.images && product.images.length > 0
+    ? product.images
+    : (product.img ? [product.img] : []);
+  const activeImg = images[activeIdx] ?? null;
 
   // Related products: same category, exclude current
   const related = CATALOG
@@ -63,21 +70,46 @@ export default function ProductPage() {
 
           {/* Product grid */}
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
-            {/* Image */}
-            <div className="rounded-sm overflow-hidden bg-[#e7ded2]">
-              {product.img ? (
-                <Image
-                  src={product.img}
-                  alt={product.name}
-                  width={0}
-                  height={0}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
-                />
-              ) : (
-                <div className="flex items-center justify-center h-64 bg-sand-300">
-                  <span className="text-ink-400 font-sans">No image</span>
+            {/* Image gallery */}
+            <div>
+              <div className="rounded-sm overflow-hidden bg-[#e7ded2]">
+                {activeImg ? (
+                  <Image
+                    src={activeImg}
+                    alt={product.name}
+                    width={0}
+                    height={0}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                ) : (
+                  <div className="flex items-center justify-center h-64 bg-sand-300">
+                    <span className="text-ink-400 font-sans">No image</span>
+                  </div>
+                )}
+              </div>
+
+              {images.length > 1 && (
+                <div className="flex gap-2 mt-3 flex-wrap">
+                  {images.map((img, i) => (
+                    <button
+                      key={img + i}
+                      onClick={() => setActiveIdx(i)}
+                      aria-label={`View photo ${i + 1}`}
+                      className={`relative w-[68px] h-[68px] rounded-sm overflow-hidden bg-[#e7ded2] flex-none border-2 transition-colors ${
+                        i === activeIdx ? 'border-ink-900' : 'border-transparent hover:border-sand-400'
+                      }`}
+                    >
+                      <Image
+                        src={img}
+                        alt={`${product.name} photo ${i + 1}`}
+                        fill
+                        className="object-cover"
+                        sizes="68px"
+                      />
+                    </button>
+                  ))}
                 </div>
               )}
             </div>
