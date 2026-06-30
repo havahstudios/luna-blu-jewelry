@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import Announcement from '@/components/Announcement';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -72,15 +72,17 @@ export default function ProductPage() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
             {/* Image gallery */}
             <div>
-              <div className="rounded-sm overflow-hidden bg-[#e7ded2]">
+              <div className="relative rounded-sm overflow-hidden bg-[#e7ded2] group">
                 {activeImg ? (
                   <Image
+                    key={activeIdx}
                     src={activeImg}
                     alt={product.name}
                     width={0}
                     height={0}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority
+                    className="lb-gallery-img"
                     style={{ width: '100%', height: 'auto', display: 'block' }}
                   />
                 ) : (
@@ -88,27 +90,40 @@ export default function ProductPage() {
                     <span className="text-ink-400 font-sans">No image</span>
                   </div>
                 )}
+
+                {images.length > 1 && (
+                  <>
+                    <button
+                      onClick={() => setActiveIdx(i => (i - 1 + images.length) % images.length)}
+                      aria-label="Previous photo"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white/75 backdrop-blur-sm rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white"
+                    >
+                      <ChevronLeft size={15} className="text-ink-900" />
+                    </button>
+                    <button
+                      onClick={() => setActiveIdx(i => (i + 1) % images.length)}
+                      aria-label="Next photo"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white/75 backdrop-blur-sm rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white"
+                    >
+                      <ChevronRight size={15} className="text-ink-900" />
+                    </button>
+                  </>
+                )}
               </div>
 
               {images.length > 1 && (
-                <div className="flex gap-2 mt-3 flex-wrap">
-                  {images.map((img, i) => (
+                <div className="flex justify-center gap-[7px] mt-4">
+                  {images.map((_, i) => (
                     <button
-                      key={img + i}
+                      key={i}
                       onClick={() => setActiveIdx(i)}
-                      aria-label={`View photo ${i + 1}`}
-                      className={`relative w-[68px] h-[68px] rounded-sm overflow-hidden bg-[#e7ded2] flex-none border-2 transition-colors ${
-                        i === activeIdx ? 'border-ink-900' : 'border-transparent hover:border-sand-400'
+                      aria-label={`Photo ${i + 1}`}
+                      className={`rounded-full transition-all duration-300 ${
+                        i === activeIdx
+                          ? 'w-[18px] h-[5px] bg-ink-900'
+                          : 'w-[5px] h-[5px] bg-sand-400 hover:bg-ink-400'
                       }`}
-                    >
-                      <Image
-                        src={img}
-                        alt={`${product.name} photo ${i + 1}`}
-                        fill
-                        className="object-cover"
-                        sizes="68px"
-                      />
-                    </button>
+                    />
                   ))}
                 </div>
               )}

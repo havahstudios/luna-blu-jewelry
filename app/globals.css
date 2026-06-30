@@ -52,6 +52,15 @@
   to   { opacity: 1; transform: none; }
 }
 
+@keyframes lb-gallery-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lb-gallery-img {
+  animation: lb-gallery-fade 0.35s ease both;
+}
+
 @keyframes lb-toast {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: none; }

@@ -33,7 +33,7 @@ export default function ProductCard({ product, aspectRatio = 'aspect-[3/4]' }: P
         )}
       </div>
       <div className="text-center">
-        <div className="font-display italic text-[19px] text-ink-900 leading-[1.25] mb-[4px] group-hover:text-gold-600 transition-colors duration-300">{product.name}</div>
+        <div className="font-sans text-[15px] font-medium text-ink-900 leading-[1.25] mb-[4px] group-hover:text-gold-600 transition-colors duration-300">{product.name}</div>
         <div className="font-sans text-[13px] text-ink-500">{price}</div>
       </div>
     </Link>

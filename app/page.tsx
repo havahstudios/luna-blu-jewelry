@@ -65,7 +65,7 @@ export default function Home() {
                   width={480} height={600} className="w-full h-auto block" />
               </div>
               <p className={`${EYEBROW} mb-2`} style={{ fontSize: 10, color: '#A89478' }}>Best Sellers</p>
-              <h3 className="font-display font-light m-0 mb-2 leading-[1.15]"
+              <h3 className="font-sans font-medium m-0 mb-2 leading-[1.15]"
                 style={{ fontSize: 22, color: '#1C1814' }}>
                 Isla Statement<br />Mirrored Necklace
               </h3>
@@ -83,7 +83,7 @@ export default function Home() {
                   width={480} height={600} className="w-full h-auto block" />
               </div>
               <p className={`${EYEBROW} mb-2`} style={{ fontSize: 10, color: '#A89478' }}>Best Sellers</p>
-              <h3 className="font-display font-light m-0 mb-2 leading-[1.15]"
+              <h3 className="font-sans font-medium m-0 mb-2 leading-[1.15]"
                 style={{ fontSize: 22, color: '#1C1814' }}>
                 Collared Metal<br />Choker — Gold
               </h3>
@@ -101,7 +101,7 @@ export default function Home() {
                   width={480} height={600} className="w-full h-auto block" />
               </div>
               <p className={`${EYEBROW} mb-2`} style={{ fontSize: 10, color: '#A89478' }}>Best Sellers</p>
-              <h3 className="font-display font-light m-0 mb-2 leading-[1.15]"
+              <h3 className="font-sans font-medium m-0 mb-2 leading-[1.15]"
                 style={{ fontSize: 22, color: '#1C1814' }}>
                 Lora Waterfall<br />Mirrored Necklace
               </h3>
