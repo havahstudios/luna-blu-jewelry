@@ -37,17 +37,7 @@ export default function ProductPage() {
   const collection = product.cats[0] ?? 'Luna Blu';
   const price = formatPrice(product.price);
 
-  // Parse bullets from description
-  let bullets: string[] = [];
-  if (product.desc) {
-    bullets = product.desc
-      .split(/\s+-\s+/)
-      .map(s => s.replace(/^[-\s]+/, '').trim())
-      .filter(s => s.length > 1);
-  }
-  if (!bullets.length) {
-    bullets = ['Handmade with love in Los Angeles, CA.', 'Hypoallergenic, waterproof, and tarnish-free.'];
-  }
+  const descText = product.desc ?? 'Handmade with love in Los Angeles, CA. Hypoallergenic, waterproof, and tarnish-free.';
 
   // Related products: same category, exclude current
   const related = CATALOG
@@ -102,15 +92,8 @@ export default function ProductPage() {
 
               <div className="h-px bg-sand-300 mb-[26px]" />
 
-              {/* Bullets */}
-              <ul className="list-none p-0 m-0 mb-8 flex flex-col gap-[11px]">
-                {bullets.map((b, i) => (
-                  <li key={i} className="flex gap-3 text-[15px] text-ink-500 leading-[1.55]">
-                    <span className="text-gold-500 flex-none">—</span>
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Description */}
+              <p className="text-[15px] text-ink-500 leading-[1.75] mb-8 m-0">{descText}</p>
 
               {/* Add to bag */}
               <button
