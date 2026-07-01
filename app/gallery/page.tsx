@@ -28,22 +28,23 @@ export default function GalleryPage() {
             </a>
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-[3px]">
+          {/* Masonry — natural image heights */}
+          <div className="columns-2 sm:columns-3 gap-[10px] [&>*]:mb-[10px] [&>*]:break-inside-avoid">
             {PHOTOS.map((src, i) => (
               <a
                 key={src}
                 href="https://instagram.com/lunablujewelry"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block overflow-hidden relative aspect-square group bg-sand-200"
+                className="block overflow-hidden group"
               >
                 <Image
                   src={src}
                   alt={`Luna Blu — photo ${i + 1}`}
-                  fill
+                  width={0}
+                  height={0}
                   sizes="(max-width: 640px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                  className="w-full h-auto block transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                 />
               </a>
             ))}
