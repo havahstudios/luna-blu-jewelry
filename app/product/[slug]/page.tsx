@@ -45,8 +45,6 @@ export default function ProductPage() {
   const images = product.images && product.images.length > 0
     ? product.images
     : (product.img ? [product.img] : []);
-  const activeImg = images[activeIdx] ?? null;
-
   // Related products: same category, exclude current
   const related = CATALOG
     .filter(p => p.slug !== product.slug && p.img && p.cats.some(c => product.cats.includes(c)))
@@ -72,24 +70,24 @@ export default function ProductPage() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
             {/* Image gallery */}
             <div>
-              <div className="relative rounded-sm overflow-hidden bg-[#e7ded2] group">
-                {activeImg ? (
-                  <Image
-                    key={activeIdx}
-                    src={activeImg}
-                    alt={product.name}
-                    width={0}
-                    height={0}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    priority
-                    className="lb-gallery-img"
-                    style={{ width: '100%', height: 'auto', display: 'block' }}
-                  />
-                ) : (
-                  <div className="flex items-center justify-center h-64 bg-sand-300">
+              <div className="relative rounded-sm overflow-hidden bg-[#e7ded2] group aspect-square">
+                {images.length === 0 && (
+                  <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-ink-400 font-sans">No image</span>
                   </div>
                 )}
+                {images.map((src, i) => (
+                  <Image
+                    key={src}
+                    src={src}
+                    alt={product.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={i === 0}
+                    className="object-cover transition-opacity duration-150"
+                    style={{ opacity: i === activeIdx ? 1 : 0 }}
+                  />
+                ))}
 
                 {images.length > 1 && (
                   <>
