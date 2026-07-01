@@ -70,24 +70,36 @@ export default function ProductPage() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
             {/* Image gallery */}
             <div>
-              <div className="relative rounded-sm overflow-hidden bg-[#e7ded2] group aspect-square">
+              <div className="relative rounded-sm overflow-hidden bg-[#e7ded2] group">
                 {images.length === 0 && (
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="h-64 flex items-center justify-center">
                     <span className="text-ink-400 font-sans">No image</span>
                   </div>
                 )}
-                {images.map((src, i) => (
-                  <Image
-                    key={src}
-                    src={src}
-                    alt={product.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    priority={i === 0}
-                    className="object-cover transition-opacity duration-150"
-                    style={{ opacity: i === activeIdx ? 1 : 0 }}
-                  />
-                ))}
+                {images.map((src, i) => {
+                  const isActive = i === activeIdx;
+                  return (
+                    <Image
+                      key={src}
+                      src={src}
+                      alt={product.name}
+                      width={0}
+                      height={0}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority={i === 0}
+                      style={{
+                        display: 'block',
+                        width: '100%',
+                        height: 'auto',
+                        position: isActive ? 'relative' : 'absolute',
+                        top: 0,
+                        left: 0,
+                        opacity: isActive ? 1 : 0,
+                        transition: 'opacity 0.15s ease',
+                      }}
+                    />
+                  );
+                })}
 
                 {images.length > 1 && (
                   <>
